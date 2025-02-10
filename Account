@@ -3,7 +3,7 @@ public class Account {
     private double balance;
 
     public Account() {
-        this.state = new OpenState(); // Default state is Open
+        this.state = new ActiveState(); // Default state is Open
         this.balance = 0.0;
     }
 
