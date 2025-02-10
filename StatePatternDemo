@@ -1,0 +1,17 @@
+public class StatePatternDemo {
+    public static void main(String[] args) {
+        Account account = new Account();
+
+        account.deposit(1000); // Deposited: 1000.0. New balance: 1000.0
+        account.withdraw(500); // Withdrew: 500.0. New balance: 500.0
+
+        account.suspend(); // Account is now suspended.
+        account.withdraw(200); // Cannot withdraw from a suspended account.
+
+        account.activate(); // Account is now open.
+        account.withdraw(200); // Withdrew: 200.0. New balance: 300.0
+
+        account.close(); // Account is now closed.
+        account.deposit(100); // Cannot deposit into a closed account.
+    }
+}
