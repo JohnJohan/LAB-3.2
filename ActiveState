@@ -1,4 +1,4 @@
-public class OpenState implements AccountState {
+public class ActiveState implements AccountState {
     @Override
     public void deposit(Account account, double amount) {
         account.setBalance(account.getBalance() + amount);
