@@ -1,0 +1,29 @@
+public class SuspendedState implements AccountState {
+    @Override
+    public void deposit(Account account, double amount) {
+        account.setBalance(account.getBalance() + amount);
+        System.out.println("Deposited: " + amount + ". New balance: " + account.getBalance());
+    }
+
+    @Override
+    public void withdraw(Account account, double amount) {
+        System.out.println("Cannot withdraw from a suspended account.");
+    }
+
+    @Override
+    public void suspend(Account account) {
+        System.out.println("Account is already suspended.");
+    }
+
+    @Override
+    public void close(Account account) {
+        account.setState(new ClosedState());
+        System.out.println("Account is now closed.");
+    }
+
+    @Override
+    public void activate(Account account) {
+        account.setState(new OpenState());
+        System.out.println("Account is now open.");
+    }
+}
