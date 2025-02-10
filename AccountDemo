@@ -1,4 +1,4 @@
-public class StatePatternDemo {
+public class AccountDemo {
     public static void main(String[] args) {
         Account account = new Account();
 
